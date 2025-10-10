@@ -1,0 +1,144 @@
+/* Definindo as cores do tema do Cerrado para fácil manutenção */
+:root {
+    --cor-fundo: #FDF8E8; /* Um bege bem claro, como a terra seca */
+    --cor-texto-principal: #3A4A3A; /* Verde escuro, quase musgo */
+    --cor-destaque: #D48C3C; /* Laranja queimado, como as flores do Ipê */
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-header: #5E7A5A; /* Verde mais sóbrio */
+    --cor-texto-header: #FFFFFF;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cor-header);
+    color: var(--cor-texto-header);
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.galeria-container {
+    display: grid;
+    /* Isso cria colunas flexíveis: no mínimo 150px, se ajustando para preencher o espaço */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.planta-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--cor-sombra);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Animação para os cards aparecerem suavemente */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.planta-card:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.planta-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Estilos do Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--cor-fundo);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.visivel .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--cor-texto-principal);
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+    color: var(--cor-header);
+    margin-top: 0;
+}
+
+.modal-content h3 {
+    color: var(--cor-destaque);
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-top: -10px;
+}

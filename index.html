@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas do Cerrado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Plantas do Cerrado</h1>
+        <p>Toque em uma folha para descobrir mais sobre a planta.</p>
+    </header>
+
+    <main>
+        <div id="galeria-plantas" class="galeria-container">
+            </div>
+    </main>
+
+    <div id="modal-planta" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Imagem da Planta">
+            <h2 id="modal-titulo">Nome da Planta</h2>
+            <h3 id="modal-nome-cientifico"><i>Nome científico</i></h3>
+            <p id="modal-descricao">Descrição completa da planta aqui...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
