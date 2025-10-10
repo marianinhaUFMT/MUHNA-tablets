@@ -33,13 +33,16 @@ header h1 {
 }
 
 .galeria-container {
-    display: grid;
-    /* Isso cria colunas flexíveis: no mínimo 150px, se ajustando para preencher o espaço */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
     padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Define uma largura máxima para a imagem */
+    margin: 0 auto;    /* Isso centraliza o container na página */
+    text-align: center; /* Garante que a imagem dentro fique centralizada */
+}
+
+/* Adicione esta nova regra para a imagem */
+.galeria-container img {
+    max-width: 100%; /* Faz a imagem ser responsiva e não passar da largura do container */
+    height: auto;    /* Mantém a proporção da imagem */
 }
 
 .planta-card {
@@ -141,4 +144,21 @@ header h1 {
     font-weight: 400;
     font-size: 1.1rem;
     margin-top: -10px;
+}
+
+@media (max-width: 800px) {
+    
+    header h1 {
+        font-size: 2rem; /* Reduz um pouco o tamanho do título principal */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Reduz o subtítulo */
+    }
+    
+    .galeria-container {
+        /* Reduz o espaçamento nas laterais para aproveitar melhor a tela */
+        padding: 1rem; 
+    }
+
 }

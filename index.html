@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantas do Cerrado</title>
+    <title>Plantas do Cerrado - Galeria Principal</title>
+    
     <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -13,24 +15,57 @@
 
     <header>
         <h1>Plantas do Cerrado</h1>
-        <p>Toque em uma folha para descobrir mais sobre a planta.</p>
+        <p>Toque em um quadro para explorar as plantas que ele contém.</p>
     </header>
 
     <main>
         <div id="galeria-plantas" class="galeria-container">
-            </div>
+            <img id="imagem-galeria" src="/images/parede_quadros.jpg" usemap="#image-map" alt="Galeria com treze quadros de folhas de plantas do Cerrado">
+            <map name="image-map">
+                <area target="" alt="Quadro1" title="Quadro1" href="/html/quadro1.html" coords="171,85,419,328" shape="rect">
+                <area target="" alt="Quadro2" title="Quadro2" href="/html/quadro2.html" coords="446,80,684,330" shape="rect">
+                <area target="" alt="Quadro3" title="Quadro3" href="/html/quadro3.html" coords="150,345,419,607" shape="rect">
+                <area target="" alt="Quadro4" title="Quadro4" href="/html/quadro4.html" coords="447,342,708,614" shape="rect">
+                <area target="" alt="Quadro5" title="Quadro5" href="/html/quadro5.html" coords="136,634,319,864" shape="rect">
+                <area target="" alt="Quadro6" title="Quadro6" href="/html/quadro6.html" coords="338,633,509,865" shape="rect">
+                <area target="" alt="Quadro7" title="Quadro7" href="/html/quadro7.html" coords="539,638,713,857" shape="rect">
+                <area target="" alt="Quadro8" title="Quadro8" href="/html/quadro8.html" coords="125,897,292,1148" shape="rect">
+                <area target="" alt="Quadro9" title="Quadro9" href="/html/quadro9.html" coords="333,896,511,1148" shape="rect">
+                <area target="" alt="Quadro10" title="Quadro10" href="/html/quadro10.html" coords="547,895,729,1144" shape="rect">
+                <area target="" alt="Quadro11" title="Quadro11" href="/html/quadro11.html" coords="87,1182,289,1494" shape="rect">
+                <area target="" alt="Quadro12" title="Quadro12" href="/html/quadro12.html" coords="332,1193,525,1493" shape="rect">
+                <area target="" alt="Quadro13" title="Quadro13" href="/html/quadro13.html" coords="559,1191,751,1472" shape="rect">
+            </map>
+        </div>
     </main>
 
-    <div id="modal-planta" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close-btn">&times;</button>
-            <img id="modal-img" src="" alt="Imagem da Planta">
-            <h2 id="modal-titulo">Nome da Planta</h2>
-            <h3 id="modal-nome-cientifico"><i>Nome científico</i></h3>
-            <p id="modal-descricao">Descrição completa da planta aqui...</p>
-        </div>
-    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-mapster/1.2.9/jquery.imagemapster.min.js"></script>
 
-    <script src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#imagem-galeria').mapster({
+                // Opções para o efeito visual (opcional)
+                fillColor: 'a3d1ff', // Cor de preenchimento ao passar o mouse
+                fillOpacity: 0.3,
+                stroke: true,        // Desenha uma borda
+                strokeColor: '2d87d6',
+                strokeWidth: 2,
+                
+                // Esta é a opção mais importante!
+                // Faz o mapa de imagem se ajustar ao tamanho da imagem
+                scaleMap: true,
+                
+                // Recalcula o mapa quando a janela muda de tamanho
+                isSelectable: false,
+                onConfigured: function() {
+                    $(window).bind('resize', function() {
+                        $('#imagem-galeria').mapster('resize', $(window).width(), 0);
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
