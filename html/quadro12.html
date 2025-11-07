@@ -3,9 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro12</title>
+    <title>Quadro 12: Folhas Simples</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    
+    <header>
+        <a href="../index.html" class="link-voltar">&larr; Voltar para a galeria</a>
+        <h1>Folhas Simples</h1>
+        <p>Toque na imagem para saber mais e ver outras fotos.</p>
+    </header>
+
+    <main>
+        <div class="quadro-container">
+            <img src="../images/quadro12/folhas-simples-4.jpg" usemap="#image-map" alt="Quadro com folhas simples">
+
+            <map name="image-map">
+                <area target="" alt="Flor de Quaresma" title="Flor de Quaresma" href="#" coords="42,31,120,225" shape="rect" data-planta="flor-de-quaresma">
+                <area target="" alt="Mutamba" title="Mutamba" href="#" coords="167,25,202,102" shape="rect" data-planta="mutamba">
+                <area target="" alt="Sacarrolha" title="Sacarrolha" href="#" coords="297,26,343,95" shape="rect" data-planta="sacarrolha">
+                <area target="" alt="Canela de Velho" title="Canela de Velho" href="#" coords="394,37,466,195" shape="rect" data-planta="canela-de-velho">
+                <area target="" alt="Quina do Cerrado" title="Quina do Cerrado" href="#" coords="57,294,109,385" shape="rect" data-planta="quina-do-cerrado">
+                <area target="" alt="Formigueira" title="Formigueira" href="#" coords="175,130,340,402" shape="rect" data-planta="formigueira">
+                <area target="" alt="Pixirica" title="Pixirica" href="#" coords="45,425,120,592" shape="rect" data-planta="pixirica">
+                <area target="" alt="Cará do Cerrado" title="Cará do Cerrado" href="#" coords="217,555,279,649" shape="rect" data-planta="cara-do-cerrado">
+                <area target="" alt="Japecanga" title="Japecanga" href="#" coords="360,346,487,664" shape="rect" data-planta="japecanga">
+            </map>
+        </div>
+    </main>
+
+    <div id="modal-planta" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Imagem da Planta">
+            <h2 id="modal-titulo"></h2>
+            <h3 id="modal-nome-cientifico"></h3>
+            <p id="modal-descricao"></p>
+
+            <div class="modal-galeria-container">
+                <h4>Mais Imagens</h4>
+                <div id="modal-galeria" class="modal-galeria">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dadosDasPlantas = {
+            'flor-de-quaresma': {
+                titulo: 'FLOR DE QUARESMA',
+                nomeCientifico: 'Pleroma stenocarpum',
+                descricao: 'Planta herbácea do Cerrado, conhecida por suas folhas simples e flores azuis. A flor de quaresma é frequentemente utilizada na medicina tradicional por suas propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/flor_de_quaresma.jpg',
+                galeria: []
+            },
+            'mutamba': {
+                titulo: 'MUTAMBA',
+                nomeCientifico: 'Guazuma ulmifolia',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e largas. A mutamba é valorizada por seus frutos comestíveis e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/mutamba.jpg',
+                galeria: []
+            },
+            'sacarrolha': {
+                titulo: 'SACARROLHA',
+                nomeCientifico: 'Helicteres sacarolha',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e flores vermelhas. A sacarrolha é valorizada por suas propriedades medicinais e madeira leve.',
+                imagemPrincipal: '../images/quadro12/sacarrolha.jpg',
+                galeria: []
+            },
+            'canela-de-velho': {
+                titulo: 'CANELA DE VELHO',
+                nomeCientifico: 'Miconia albicans',
+                descricao: 'Arbusto do Cerrado, conhecido por suas folhas simples e coriáceas. A canela de velho é frequentemente utilizada na medicina tradicional por suas propriedades anti-inflamatórias.',
+                imagemPrincipal: '../images/quadro12/canela_de_velho.jpg',
+                galeria: []
+            },
+            'quina-do-cerrado': {
+                titulo: 'QUINA DO CERRADO',
+                nomeCientifico: 'Strychnos pseudoquina',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e coriáceas. A quina do cerrado é valorizada por seus frutos comestíveis e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/quina_do_cerrado.jpg',
+                galeria: []
+            },
+            'formigueira': {
+                titulo: 'FORMIGUEIRA',
+                nomeCientifico: 'Tococa guianensis',
+                descricao: 'Árvore de grande porte, nativa do Brasil, conhecida por suas folhas simples e coriáceas. A formigueira é valorizada por sua madeira resistente e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/formigueira.jpg',
+                galeria: []
+            },
+            'pixirica': {
+                titulo: 'PIXIRICA',
+                nomeCientifico: 'Miconia nervosa',
+                descricao: 'Planta trepadeira do Cerrado, conhecida por suas folhas simples e flores pequenas. A pixirica é frequentemente utilizada na medicina tradicional por suas propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/pixirica.jpg',
+                galeria: []
+            },
+            'cara-do-cerrado': {
+                titulo: 'CARÁ DO CERRADO',
+                nomeCientifico: 'Dioscorea orthogoneura',
+                descricao: 'Planta trepadeira do Cerrado, conhecida por suas folhas simples e flores pequenas. O cará do cerrado é valorizado por seus tubérculos comestíveis e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/cara_do_cerrado.jpg',
+                galeria: []
+            },
+            'japecanga': {
+                titulo: 'JAPECANGA',
+                nomeCientifico: 'Smilax fluminensis',
+                descricao: 'Árvore de grande porte, nativa do Brasil, conhecida por suas folhas compostas e flores amarelas. A japecanga é valorizada por sua madeira resistente e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro12/japecanga.jpg',
+                galeria: []
+            }
+        };
+    </script>
+
+    <script src="../script.js"></script>
+
 </body>
 </html>

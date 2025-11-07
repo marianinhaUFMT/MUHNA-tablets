@@ -3,9 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro10</title>
+    <title>Quadro 10: Folhas Simples</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <header>
+        <a href="../index.html" class="link-voltar">&larr; Voltar para a galeria</a>
+        <h1>Folhas Simples</h1>
+        <p>Toque na imagem para saber mais e ver outras fotos.</p>
+    </header>
+
+    <main>
+        <div class="quadro-container">
+            <img src="../images/quadro10/folhas-simples-2.jpg" usemap="#image-map">
+
+            <map name="image-map">
+                <area target="" alt="Sucuuba" title="Sucuuba" href="#" coords="49,8,177,211" shape="rect" data-planta="sucuuba">
+                <area target="" alt="Cambará" title="Cambará" href="#" coords="455,131,545,301" shape="rect" data-planta="cambara">
+                <area target="" alt="Acá de Leite" title="Acá de Leite" href="#" coords="251,84,411,391" shape="rect" data-planta="aca-de-leite">
+                <area target="" alt="Escorrega Macaco" title="Escorrega Macaco" href="#" coords="37,283,122,444" shape="rect" data-planta="escorrega-macaco">
+                <area target="" alt="Taquari" title="Taquari" href="#" coords="190,410,263,576" shape="rect" data-planta="taquari">
+                <area target="" alt="Canudinho" title="Canudinho" href="#" coords="388,497,460,620" shape="rect" data-planta="canudinho">
+                <area target="" alt="Mangaba" title="Mangaba" href="#" coords="484,434,560,585" shape="rect" data-planta="mangaba">
+            </map>
+        </div>
+    </main>
+
+    <div id="modal-planta" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Imagem da Planta">
+            <h2 id="modal-titulo"></h2>
+            <h3 id="modal-nome-cientifico"></h3>
+            <p id="modal-descricao"></p>
+            
+            <div class="modal-galeria-container">
+                <h4>Mais Imagens</h4>
+                <div id="modal-galeria" class="modal-galeria">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dadosDasPlantas = {
+            'sucuuba': {
+                titulo: 'SUCUUBA',
+                nomeCientifico: 'Himatanthus articulatus',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e largas. A sucuúba é valorizada por sua madeira e frutos comestíveis.',
+                imagemPrincipal: '../images/quadro10/sucuuba.jpg',
+                galeria: [
+                    '../images/quadro10/sucuuba1.jpg',
+                    '../images/quadro10/sucuuba2.jpg',
+                    '../images/quadro10/sucuuba3.jpg'
+                ]
+            },
+            'cambara': {
+                titulo: 'CAMBARÁ',
+                nomeCientifico: 'Qualea ingens',
+                descricao: 'Árvore de grande porte, encontrada em várias regiões do Brasil, incluindo a Amazônia. Conhecida por suas folhas simples e largas, o cambará é valorizado por sua madeira e flores ornamentais.',
+                imagemPrincipal: '../images/quadro10/cambara.jpg',
+                galeria: [
+                    '../images/quadro10/cambara1.jpg',
+                    '../images/quadro10/cambara2.jpg',
+                    '../images/quadro10/cambara3.jpg'
+                ]
+            },
+            'aca-de-leite': {
+                titulo: 'ACÁ DE LEITE',
+                nomeCientifico: 'Ecclinusa ramiflora',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e ovais. O acá de leite é valorizado por seus frutos comestíveis e madeira.',
+                imagemPrincipal: '../images/quadro10/aca_de_leite.jpg',
+                galeria: [
+                    '../images/quadro10/aca_de_leite1.jpg',
+                    '../images/quadro10/aca_de_leite2.jpg',
+                    '../images/quadro10/aca_de_leite3.jpg'
+                ]
+            },
+            'escorrega-macaco': {
+                titulo: 'ESCORREGA MACACO',
+                nomeCientifico: 'Vochysia haenkeana',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e compostas. O escorrega macaco é valorizado por suas flores vistosas e madeira.',
+                imagemPrincipal: '../images/quadro10/escorrega_macaco.jpg',
+                galeria: [
+                    '../images/quadro10/escorrega_macaco1.jpg',
+                    '../images/quadro10/escorrega_macaco2.jpg',
+                    '../images/quadro10/escorrega_macaco3.jpg'
+                ]
+            },
+            'taquari': {
+                titulo: 'TAQUARI',
+                nomeCientifico: 'Mabea pohliana',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e ovais. O taquari é valorizado por seus frutos comestíveis e madeira.',
+                imagemPrincipal: '../images/quadro10/taquari.jpg',
+                galeria: [
+                    '../images/quadro10/taquari1.jpg',
+                    '../images/quadro10/taquari2.jpg',
+                    '../images/quadro10/taquari3.jpg'
+                ]
+            },
+            'canudinho': {
+                titulo: 'CANUDINHO',
+                nomeCientifico: 'Mabea fistulifera',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e ovais. O canudinho é valorizado por suas flores aromáticas e madeira.',
+                imagemPrincipal: '../images/quadro10/canudinho.jpg',
+                galeria: [
+                    '../images/quadro10/canudinho1.jpg',
+                    '../images/quadro10/canudinho2.jpg',
+                    '../images/quadro10/canudinho3.jpg'
+                ]
+            },
+            'mangaba': {
+                titulo: 'MANGABA',
+                nomeCientifico: 'Hancornia speciosa',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e ovais. A mangaba é valorizada por seus frutos comestíveis e madeira.',
+                imagemPrincipal: '../images/quadro10/mangaba.jpg',
+                galeria: [
+                    '../images/quadro10/mangaba1.jpg',
+                    '../images/quadro10/mangaba2.jpg',
+                    '../images/quadro10/mangaba3.jpg'
+                ]
+            }
+        };
+    </script>
+
+    <script src="../script.js"></script>
     
 </body>
 </html>

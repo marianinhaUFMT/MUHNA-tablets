@@ -3,9 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro13</title>
+    <title>Quadro 13: Folhas de Patas de Vaca</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <header>
+        <a href="../index.html" class="link-voltar">&larr; Voltar para a galeria</a>
+        <h1>Folhas Simples</h1>
+        <p>Toque em uma folha para saber mais sobre a planta.</p>
+    </header>
+    <main>
+        <div class="quadro-container">
+            <img src="../images/quadro13/folhas-simples-5.jpg" usemap="#image-map" alt="Quadro com folhas simples">
     
+            <map name="image-map">
+                <area target="" alt="Pata de Vaca Primeira Folha" title="Pata de Vaca Primeira Folha" href="#" coords="108,125,99" shape="circle" data-planta="pata-de-vaca-primeira-folha">
+                <area target="" alt="Chá de Bugre" title="Chá de Bugre" href="#" coords="290,106,56" shape="circle" data-planta="cha-de-bugre">
+                <area target="" alt="Sangra D'Água" title="Sangra D'Água" href="#" coords="466,136,72" shape="circle" data-planta="sangra-dagua">
+                <area target="" alt="Quina" title="Quina" href="#" coords="67,410,50" shape="circle" data-planta="quina">
+                <area target="" alt="Quina Branca" title="Quina Branca" href="#" coords="278,346,126" shape="circle" data-planta="quina-branca">
+                <area target="" alt="Cascudinho" title="Cascudinho" href="#" coords="464,408,52" shape="circle" data-planta="cascudinho">
+                <area target="" alt="Maracujá Mirim" title="Maracujá Mirim" href="#" coords="132,590,73" shape="circle" data-planta="maracuja-mirim">
+                <area target="" alt="Maracujá do Cerrado" title="Maracujá do Cerrado" href="#" coords="288,629,78" shape="circle" data-planta="maracuja-do-cerrado">
+                <area target="" alt="Jurubeba" title="Jurubeba" href="#" coords="472,613,75" shape="circle" data-planta="jurubeba">
+            </map>
+        </div>
+    </main>
+
+    <div id="modal-planta" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Imagem da Planta">
+            <h2 id="modal-titulo"></h2>
+            <h3 id="modal-nome-cientifico"></h3>
+            <p id="modal-descricao"></p>
+            
+            <div class="modal-galeria-container">
+                <h4>Mais Imagens</h4>
+                <div id="modal-galeria" class="modal-galeria">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dadosDasPlantas = {
+            'pata-de-vaca-primeira-folha': {
+                titulo: 'PATA DE VACA PRIMEIRA FOLHA',
+                nomeCientifico: 'Bauhinia sp.',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/pata_de_vaca_primeira_folha.jpg',
+                galeria: []
+            },
+            'cha-de-bugre': {
+                titulo: 'CHÁ DE BUGRE',
+                nomeCientifico: 'Cordia sellowiana',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/cha_de_bugre.jpg',
+                galeria: []
+            },
+            'sangra-dagua': {
+                titulo: 'SANGRA D\'ÁGUA',
+                nomeCientifico: 'Croton urucurana',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/sangra_dagua.jpg',
+                galeria: []
+            },
+            'quina': {
+                titulo: 'QUINA',
+                nomeCientifico: 'Antonia ovata',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/quina.jpg',
+                galeria: []
+            },
+            'quina-branca': {
+                titulo: 'QUINA BRANCA',
+                nomeCientifico: 'Coussarea hydrangeifolia',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/quina_branca.jpg',
+                galeria: []
+            },
+            'cascudinho': {
+                titulo: 'CASCUDINHO',
+                nomeCientifico: 'Maprounea guianensis',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/cascudinho.jpg',
+                galeria: []
+            },
+            'maracuja-mirim': {
+                titulo: 'MARACUJÁ MIRIM',
+                nomeCientifico: 'Passiflora pohlii',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/maracuja_mirim.jpg',
+                galeria: []
+            },
+            'maracuja-do-cerrado': {
+                titulo: 'MARACUJÁ DO CERRADO',
+                nomeCientifico: 'Passiflora mansoi',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/maracuja_do_cerrado.jpg',
+                galeria: []
+            },
+            'jurubeba': {
+                titulo: 'JURUBEBA',
+                nomeCientifico: 'Solanum paniculatum',
+                descricao: 'Preencha a descrição aqui...',
+                imagemPrincipal: '../images/quadro13/jurubeba.jpg',
+                galeria: []
+            }
+        };
+    </script>
+
+    <script src="../script.js"></script>
+
 </body>
 </html>

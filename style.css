@@ -146,6 +146,61 @@ header h1 {
     margin-top: -10px;
 }
 
+.quadro-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.imagem-quadro {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer; /* Transforma o cursor em uma "mãozinha" para indicar que é clicável */
+    transition: transform 0.3s ease;
+}
+
+.imagem-quadro:hover {
+    transform: scale(1.03);
+}
+
+.link-voltar {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-header);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos para a galeria dentro do modal */
+.modal-galeria-container {
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+.modal-galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite que as imagens quebrem a linha se não couberem */
+}
+
+.modal-galeria img {
+    width: 100px; /* Tamanho das miniaturas */
+    height: 100px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-galeria img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
 @media (max-width: 800px) {
     
     header h1 {

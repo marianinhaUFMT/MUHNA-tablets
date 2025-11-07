@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro3</title>
+    <title>Quadro 3: Chichá</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    
+    <header>
+        <a href="../index.html" class="link-voltar">&larr; Voltar para a galeria</a>
+        <h1>Chichá</h1>
+        <p>Toque na imagem para saber mais e ver outras fotos.</p>
+    </header>
+    <main>
+        <div class="quadro-container">
+            <img id="folha-clicavel" 
+                 class="imagem-quadro"
+                 src="../images/quadro3/chicha.jpg" 
+                 alt="Folha de Chichá">
+        </div>
+    </main>
+
+    <div id="modal-planta" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Imagem da Planta">
+            <h2 id="modal-titulo"></h2>
+            <h3 id="modal-nome-cientifico"></h3>
+            <p id="modal-descricao"></p>
+
+            <div class="modal-galeria-container">
+                <h4>Mais Imagens</h4>
+                <div id="modal-galeria" class="modal-galeria">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dadosDasPlantas = {
+            'chicha': {
+                titulo: 'CHICHÁ',
+                nomeCientifico: 'Sterculia striata',
+                descricao: 'Planta herbácea do Cerrado, conhecida por suas folhas largas e flores brancas. O chichá é frequentemente encontrado em áreas alagadas.',
+                // Lembre-se de colocar os nomes corretos das suas fotos aqui
+                imagemPrincipal: '../images/quadro3/chicha.jpg',
+                galeria: [
+                    '../images/quadro3/foto_detalhe1.jpg',
+                    '../images/quadro3/foto_flor.jpg',
+                    '../images/quadro3/foto_tronco.jpg'
+                ]
+            }
+        };
+    </script>
+
+    <script src="../script.js"></script>
+
 </body>
 </html>

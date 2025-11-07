@@ -3,9 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro11</title>
+    <title>Quadro 11: Folhas Simples</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <header>
+        <a href="../index.html" class="link-voltar">&larr; Voltar para a galeria</a>
+        <h1>Folhas Simples</h1>
+        <p>Toque na imagem para saber mais e ver outras fotos.</p>
+    </header>
+
+    <main>
+        <div class="quadro-container">
+            <img src="../images/quadro11/folhas-simples-3.jpg" usemap="#image-map">
+
+            <map name="image-map">
+                <area target="" alt="Araticum do Cerrado" title="Araticum do Cerrado" href="#" coords="147,143,111" shape="circle" data-planta="araticum-do-cerrado">
+                <area target="" alt="Bosta de Cabra" title="Bosta de Cabra" href="#" coords="337,134,49" shape="circle" data-planta="bosta-de-cabra">
+                <area target="" alt="Lixeira" title="Lixeira" href="#" coords="487,123,88" shape="circle" data-planta="lixeira">
+                <area target="" alt="Juá" title="Juá" href="#" coords="98,378,31" shape="circle" data-planta="jua">
+                <area target="" alt="Salsa Brava" title="Salsa Brava" href="#" coords="338,385,159" shape="circle" data-planta="salsa-brava">
+                <area target="" alt="Caqui do Mato" title="Caqui do Mato" href="#" coords="573,340,40" shape="circle" data-planta="caqui-do-mato">
+                <area target="" alt="Cipó de Leite" title="Cipó de Leite" href="#" coords="123,642,96" shape="circle" data-planta="cipo-de-leite">
+                <area target="" alt="Pau Pólvora" title="Pau Pólvora" href="#" coords="323,663,66" shape="circle" data-planta="pau-polvora">
+                <area target="" alt="Guamirim" title="Guamirim" href="#" coords="501,646,81" shape="circle" data-planta="guamirim">
+            </map>
+        </div>
+    </main>
+
+    <div id="modal-planta" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Imagem da Planta">
+            <h2 id="modal-titulo"></h2>
+            <h3 id="modal-nome-cientifico"></h3>
+            <p id="modal-descricao"></p>
+            
+            <div class="modal-galeria-container">
+                <h4>Mais Imagens</h4>
+                <div id="modal-galeria" class="modal-galeria">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dadosDasPlantas = {
+            'araticum-do-cerrado': {
+                titulo: 'ARATICUM DO CERRADO',
+                nomeCientifico: 'Annona coriacea',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e largas. O araticum do cerrado é valorizado por seus frutos comestíveis e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro11/araticum_do_cerrado.jpg',
+                galeria: []
+            },
+            'bosta-de-cabra': {
+                titulo: 'BOSTA DE CABRA',
+                nomeCientifico: 'Hirtella gracilipes',
+                descricao: 'Planta herbácea do Cerrado, conhecida por suas folhas simples e flores amarelas. A bosta de cabra é frequentemente encontrada em áreas abertas e é utilizada na medicina tradicional.',
+                imagemPrincipal: '../images/quadro11/bosta_de_cabra.jpg',
+                galeria: []
+            },
+            'lixeira': {
+                titulo: 'LIXEIRA',
+                nomeCientifico: 'Curatella americana',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e coriáceas. A lixeira é valorizada por sua madeira resistente e frutos comestíveis.',
+                imagemPrincipal: '../images/quadro11/lixeira.jpg',
+                galeria: []
+            },
+            'jua': {
+                titulo: 'JUÁ',
+                nomeCientifico: 'Celtis iguanaea',
+                descricao: 'Árvore de pequeno a médio porte, nativa do Brasil, conhecida por suas folhas simples e flores pequenas. O juá é valorizado por seus frutos comestíveis e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro11/jua.jpg',
+                galeria: []
+            },
+            'salsa-brava': {
+                titulo: 'SALSA BRAVA',
+                nomeCientifico: 'Ipomoea asarifolia',
+                descricao: 'Planta herbácea do Cerrado, conhecida por suas folhas simples e flores pequenas. A salsa brava é frequentemente utilizada como condimento na culinária regional.',
+                imagemPrincipal: '../images/quadro11/salsa_brava.jpg',
+                galeria: []
+            },
+            'caqui-do-mato': {
+                titulo: 'CAQUI DO MATO',
+                nomeCientifico: 'Diospyrus brasiliensis',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e coriáceas. O caqui do mato é valorizado por seus frutos comestíveis e madeira.',
+                imagemPrincipal: '../images/quadro11/caqui_do_mato.jpg',
+                galeria: []
+            },
+            'cipo-de-leite': {
+                titulo: 'CIPÓ DE LEITE',
+                nomeCientifico: 'Schubertia grandiflora',
+                descricao: 'Planta trepadeira do Cerrado, conhecida por suas folhas simples e flores pequenas. O cipó de leite é frequentemente utilizado na medicina tradicional por suas propriedades medicinais.',
+                imagemPrincipal: '../images/quadro11/cipo_de_leite.jpg',
+                galeria: []
+            },
+            'pau-polvora': {
+                titulo: 'PAU PÓLVORA',
+                nomeCientifico: 'Trema micranthum',
+                descricao: 'Árvore de médio porte, nativa do Brasil, conhecida por suas folhas simples e flores pequenas. O pau pólvora é valorizado por sua madeira resistente e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro11/pau_polvora.jpg',
+                galeria: []
+            },
+            'guamirim': {
+                titulo: 'GUAMIRIM',
+                nomeCientifico: 'Myrcia sp.',
+                descricao: 'Árvore de pequeno a médio porte, nativa do Brasil, conhecida por suas folhas simples e coriáceas. O guamirim é valorizado por seus frutos comestíveis e propriedades medicinais.',
+                imagemPrincipal: '../images/quadro11/guamirim.jpg',
+                galeria: []
+            }
+        };
+    </script>
+
+    <script src="../script.js"></script>
     
 </body>
 </html>
